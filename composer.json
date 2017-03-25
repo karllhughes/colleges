@@ -1,0 +1,14 @@
+{
+    "name": "karlhughes/colleges",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Karl Hughes",
+            "email": "khughes.me@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "shiphp/shiphp": "dev-master"
+    }
+}
