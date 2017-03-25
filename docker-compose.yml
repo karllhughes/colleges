@@ -1,6 +1,16 @@
 version: "3.0"
 services:
 
+  # API Service
+  api:
+    image: shiphp/shiphp-crud-api
+    restart: always
+    links:
+      - database
+    ports:
+      - 32000:80
+    env_file: .env
+
   # Database
   database:
     image: postgres:9.5

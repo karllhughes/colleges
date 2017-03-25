@@ -22,7 +22,20 @@ This is an open API for accessing the names and locations of accredited colleges
 
 ### API Documentation
 
-- Once your web application is running, visit `/api` to view the documentation.
+- Once your web application is running, visit `localhost:32000/` to view the documentation.
+- Examples:
+
+#### Get the first 100 colleges sorted by name and transformed:
+
+``` 
+http://localhost:32000/colleges?order=name&page=1,100&transform=1
+```
+
+#### Get the second page of records for colleges in Memphis, TN:
+
+``` 
+http://localhost:32000/colleges?order=id&page=2,20&filter=location,eq,Memphis, TN
+```
 
 ### Technical Details
 
