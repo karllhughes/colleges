@@ -16,6 +16,7 @@ class Colleges extends AbstractMigration
         $table = $this->table('colleges', ['id' => false, 'primary_key' => 'id']);
         $table
             // Mandatory fields
+            ->addColumn('id', 'uuid')
             ->addColumn('name', 'string')
 
             // Optional fields
@@ -32,16 +33,13 @@ class Colleges extends AbstractMigration
             ->addColumn('url', 'string', ['null' => true, 'default' => null])
 
             // Specific to this dataset
-            ->addColumn('opeId', 'integer', ['null' => true, 'default' => null]) // https://www2.ed.gov/about/offices/list/ope/index.html?exp=5
-            ->addColumn('ipedsId', 'integer', ['null' => true, 'default' => null]) // https://nces.ed.gov/ipeds/
+            ->addColumn('opeId', 'string', ['null' => true, 'default' => null]) // https://www2.ed.gov/about/offices/list/ope/index.html?exp=5
+            ->addColumn('ipedsId', 'string', ['null' => true, 'default' => null]) // https://nces.ed.gov/ipeds/
             ->addColumn('alternativeId', 'integer', ['null' => true, 'default' => null]) // from the original dataset
 
-            // Automatic fields
-            ->addColumn('id', 'uuid')
+            // Create the table
             ->addColumn('deleted_at', 'timestamp', ['null' => true, 'default' => null])
             ->addTimestamps()
-
-            // Create the table
             ->create();
 
         // Set uuid to autogenerate
