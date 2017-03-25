@@ -37,6 +37,13 @@ http://localhost:32000/colleges?order=name&page=1,100&transform=1
 http://localhost:32000/colleges?order=id&page=2,20&filter=location,eq,Memphis, TN
 ```
 
+#### Get a single college by uuid
+```
+http://localhost:32000/colleges/a3379d4e-bc71-4a7d-b7d9-c954c8b1d300
+```
+
+Currently only GET requests are supported. POST, PUT, DELETE and others will be available with API key authorization in a later release. 
+
 ### Technical Details
 
 - The list of colleges is retrieved from [ope.ed.gov](https://ope.ed.gov/accreditation/GetDownloadFile.aspx), and the last update was in March 2016.
