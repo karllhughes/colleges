@@ -14,6 +14,7 @@ This is an open API for accessing the names and locations of accredited colleges
 
 - Clone this repository
 - Install the composer packages: `composer install`
+- Copy and cusotmize your .env file.
 - Bring up the containers: `vendor/bin/shiphp up`
 - Run the migrations: `vendor/bin/shiphp migrate:run`
 - Run the seeder: `vendor/bin/shiphp seed:run`

@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/shiphp/shiphp.git",
-                "reference": "5c95974466d25b404644c45d88af3cbf3936c03d"
+                "reference": "72a2d79d0315ae9bd34a99d1e049f39b14388601"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/shiphp/shiphp/zipball/5c95974466d25b404644c45d88af3cbf3936c03d",
-                "reference": "5c95974466d25b404644c45d88af3cbf3936c03d",
+                "url": "https://api.github.com/repos/shiphp/shiphp/zipball/72a2d79d0315ae9bd34a99d1e049f39b14388601",
+                "reference": "72a2d79d0315ae9bd34a99d1e049f39b14388601",
                 "shasum": ""
             },
             "bin": [
@@ -37,7 +37,7 @@
                 }
             ],
             "description": "Command line tools for Shiphp framework.",
-            "time": "2017-03-25 18:37:10"
+            "time": "2017-03-26 03:04:41"
         }
     ],
     "packages-dev": [],
