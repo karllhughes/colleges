@@ -12,4 +12,5 @@ deployer:
   image: chickenzord/hyper
   volumes:
     - docker:/docker
+    - .env:/.env
   encrypted_env_file: docker/deployer/.env.encrypted
