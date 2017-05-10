@@ -12,6 +12,9 @@
 
     "composer:install": "docker run --rm -v $(pwd):/app composer/composer:latest install",
     "composer:update": "docker run --rm -v $(pwd):/app composer/composer:latest update",
-    "composer:dump": "docker run --rm -v $(pwd):/app composer/composer:latest dump"
+    "composer:dump": "docker run --rm -v $(pwd):/app composer/composer:latest dump",
+
+    "db:migrate": "docker exec docker_api_1 vendor/bin/phinx migrate",
+    "db:seed": "docker exec docker_api_1 vendor/bin/phinx seed:run"
   }
 }

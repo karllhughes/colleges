@@ -1,6 +1,8 @@
 <?php
 
-include '../vendor/autoload.php';
+include './vendor/autoload.php';
+
+$_SERVER['SCRIPT_NAME'] = "";
 
 // DB Connection
 $api = new PHP_CRUD_API([
@@ -15,4 +17,10 @@ $api = new PHP_CRUD_API([
     },
 ]);
 
-$api->executeCommand();
+if ($_SERVER['REQUEST_METHOD'] === "GET") {
+    $api->executeCommand();
+} else {
+    header("HTTP/1.1 401 Unauthorized");
+    echo "Not authorized.";
+    exit;
+}

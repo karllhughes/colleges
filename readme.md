@@ -9,41 +9,43 @@ This is an open API for accessing the names and locations of accredited colleges
 - Docker and Docker Compose
 - NPM/NodeJS 6+
 
-### Setup
+### Local Setup
 
 - Clone this repository.
 - Install the composer packages: `npm run -s composer:install`.
 - Copy `.env.example` to `.env` and add your credentials.
 - Build the dockerfile: `npm run -s app:local:build`.
-- Bring up the containers: `npm run -s app:local:up`.
+- Bring up the containers: `npm run -s app:local:up`. It may take a few seconds for the database to start up the first time.
 - Run the migrations: `npm run -s db:migrate`.
 - Run the seeder: `npm run -s db:seed`.
+
+The application's documentation will be reachable at `localhost:8100/`.
 
 ## Usage
 
 ### API Documentation
 
-- Once your web application is running, visit `localhost:32000/` to view the documentation.
+- Once your web application is running, visit `localhost:8100/` to view the documentation.
 - Examples:
 
 #### Get the first 100 colleges sorted by name and transformed:
 
 ``` 
-http://localhost:8080/api/colleges?order=name&page=1,100&transform=1
+http://localhost:8100/colleges?order=name&page=1,100&transform=1
 ```
 
 #### Get the second page of records for colleges in Memphis, TN:
 
 ``` 
-http://localhost:8080/api/colleges?order=id&page=2,20&filter=location,eq,Memphis, TN
+http://localhost:8100/colleges?order=id&page=2,20&filter=location,eq,Memphis, TN
 ```
 
 #### Get a single college by uuid
 ```
-http://localhost:8080/api/colleges/a3379d4e-bc71-4a7d-b7d9-c954c8b1d300
+http://localhost:8100/colleges/a3379d4e-bc71-4a7d-b7d9-c954c8b1d300
 ```
 
-Currently only GET requests are supported. POST, PUT, DELETE and others will be available with API key authorization in a later release. 
+Currently only GET requests are supported. POST, PUT, DELETE and others will be available with API key authorization in a later release.
 
 ## Server Deployment
 
