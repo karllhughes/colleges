@@ -8,8 +8,8 @@ services:
     restart: always
     links:
       - database
-    env_file:
-      - ../.env
+    # env_file:
+    #   - ../.env
     ports:
       - 80:80
 
