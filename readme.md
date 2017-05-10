@@ -26,12 +26,13 @@ The application's documentation will be reachable at `localhost:8100/`.
 ### API Documentation
 
 - Once your web application is running, visit `localhost:8100/` to view the documentation.
+- By default, all requests are made on the first page of 100, ordered by ID. You can change that though.
 - Examples:
 
-#### Get the first 100 colleges sorted by name and transformed:
+#### Get the second 100 colleges sorted by name and transformed:
 
 ``` 
-http://localhost:8100/colleges?order=name&page=1,100&transform=1
+http://localhost:8100/colleges?order=name&page=2,100&transform=1
 ```
 
 #### Get the second page of records for colleges in Memphis, TN:

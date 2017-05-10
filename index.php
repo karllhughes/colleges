@@ -2,7 +2,10 @@
 
 include './vendor/autoload.php';
 
+// Default parameters
 $_SERVER['SCRIPT_NAME'] = "";
+$_GET['page'] = $_GET['page'] ?? '1,100';
+$_GET['order'] = $_GET['order'] ?? 'id';
 
 // DB Connection
 $api = new PHP_CRUD_API([
