@@ -56,10 +56,20 @@ This project is intended to be hosted on [Hyper.sh](https://hyper.sh/), but you 
 - Remove the original container: `hyper rm <CID>`
 - Create snapshot: `hyper snapshot create --volume <VID> --name colleges`
 - Create named volume from snapshot: `hyper volume create --snapshot=colleges --name=colleges`
+- Pull the latest: `hyper pull karllhughes/colleges:latest`
 - Bring up the containers: `hyper compose up -f docker/compose.hyper.yml -p colleges$RANDOM -d`
 - Attach your floating IP: `hyper fip attach <FIP> <CID>`
 
 ### Updating code
+
+Updating production code:
+
+- Pull the latest: `hyper pull karllhughes/colleges:latest`
+- Recreate the containers: `hyper compose up -f docker/compose.hyper.yml -d --force-recreate -p <PID>`
+- Attach your floating IP: `hyper fip attach <FIP> <PID>`
+
+Or the single command/container:
+
 - Add a `docker/deployer/.env` file with your Hyper.sh credentials.
 - Run `npm run -s app:prod:deploy`.
 
