@@ -1,0 +1,8 @@
+vendor
+.idea
+.data
+codeship.aes
+docker
+.env
+.DS_Store
+npm-debug.log

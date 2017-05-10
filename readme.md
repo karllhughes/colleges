@@ -6,18 +6,18 @@ This is an open API for accessing the names and locations of accredited colleges
 
 ### Prerequisites
 
-- PHP 7.0+ 
-- Composer 1.0+
 - Docker and Docker Compose
+- NPM/NodeJS 6+
 
 ### Setup
 
-- Clone this repository
-- Install the composer packages: `composer install`
-- Copy and cusotmize your .env file.
-- Bring up the containers: `vendor/bin/shiphp up`
-- Run the migrations: `vendor/bin/shiphp migrate:run`
-- Run the seeder: `vendor/bin/shiphp seed:run`
+- Clone this repository.
+- Install the composer packages: `npm run -s composer:install`.
+- Copy `.env.example` to `.env` and add your credentials.
+- Build the dockerfile: `npm run -s app:local:build`.
+- Bring up the containers: `npm run -s app:local:up`.
+- Run the migrations: `npm run -s db:migrate`.
+- Run the seeder: `npm run -s db:seed`.
 
 ## Usage
 
@@ -47,9 +47,9 @@ Currently only GET requests are supported. POST, PUT, DELETE and others will be 
 
 ## Server Deployment
 
-Follow the local installation instructions, but instead of running `vendor/bin/shiphp up` you should run `docker-compose -f docker-compose.prod.yml up -d` to use the prod docker-compose file.
-
-To update the code, you can run `deploy.sh` via `ssh`, eg: `ssh YOURUSER@YOURIP -t 'cd colleges && sh deploy.sh'`.
+```
+...
+```
 
 ## Technical Details
 

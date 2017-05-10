@@ -1,14 +1,18 @@
 {
-    "name": "karlhughes/colleges",
-    "type": "project",
-    "authors": [
-        {
-            "name": "Karl Hughes",
-            "email": "khughes.me@gmail.com"
-        }
-    ],
-    "minimum-stability": "dev",
-    "require": {
-        "shiphp/shiphp": "dev-master"
+  "name": "karlhughes/colleges",
+  "type": "project",
+  "authors": [
+    {
+        "name": "Karl Hughes",
+        "email": "khughes.me@gmail.com"
     }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "mevdschee/php-crud-api": "^1.0",
+    "robmorgan/phinx": "^0.8.0"
+  },
+  "require-dev": {
+    "fzaninotto/faker": "^1.6"
+  }
 }

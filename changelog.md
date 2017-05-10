@@ -8,7 +8,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - Nothing yet.
 
 ### Changed
-- Nothing yet.
+- Moved deps to composer.
+- Standardized based on [Spec](https://github.com/shiphp/spec).
 
 ## [0.1.0] - 2017-03-29
 

@@ -1,0 +1,17 @@
+{
+  "name": "colleges",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "app:local:build": "docker-compose -f docker/compose.local.yml build",
+    "app:local:up": "docker-compose -f docker/compose.local.yml up -d",
+    "app:local:down": "docker-compose -f docker/compose.local.yml down",
+    "app:local:restart": "docker-compose -f docker/compose.local.yml up -d --force-recreate",
+
+    "app:prod:deploy": "docker run --rm --env-file $(pwd)/docker/deployer/.env -v $(pwd)/docker:/docker chickenzord/hyper sh /docker/deploy.hyper.sh",
+
+    "composer:install": "docker run --rm -v $(pwd):/app composer/composer:latest install",
+    "composer:update": "docker run --rm -v $(pwd):/app composer/composer:latest update",
+    "composer:dump": "docker run --rm -v $(pwd):/app composer/composer:latest dump"
+  }
+}

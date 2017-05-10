@@ -1,5 +1,6 @@
 .DS_Store
 .idea
-/vendor/
+vendor
 .data
 .env
+npm-debug.log
