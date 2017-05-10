@@ -11,14 +11,8 @@ services:
       dockerfile: Dockerfile
     links:
       - database
-    encrypted_env_file: .env.encrypted
     volumes:
       - ./vendor:/var/www/html/vendor
-  # Database
-  database:
-    image: postgres:9.5
-    environment:
-      - POSTGRES_USER=admin
   # Docker deployer
   deployer:
     image: chickenzord/hyper

@@ -7,8 +7,14 @@ services:
     restart: always
     links:
       - database
-    env_file:
-      - ../.env
+    environment:
+      - DB_ADAPTER=pgsql
+      - DB_ENGINE=PostgreSQL
+      - DB_HOSTNAME=database
+      - DB_DATABASE=admin
+      - DB_USERNAME=admin
+      - DB_PASSWORD=
+      - DB_PORT=5432
     volumes:
       - ../.:/var/www/html
     ports:
