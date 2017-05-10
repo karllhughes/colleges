@@ -49,14 +49,19 @@ http://localhost:8100/colleges/a3379d4e-bc71-4a7d-b7d9-c954c8b1d300
 Currently only GET requests are supported. POST, PUT, DELETE and others will be available with API key authorization in a later release.
 
 ## Server Deployment
+This project is intended to be hosted on [Hyper.sh](https://hyper.sh/), but you can set it up anywhere you host docker containers.
 
+### First time deployment
 - Upload local data to volume: `hyper run -v $(pwd)/.data:/.data ubuntu`
 - Remove the original container: `hyper rm <CID>`
 - Create snapshot: `hyper snapshot create --volume <VID> --name colleges`
 - Create named volume from snapshot: `hyper volume create --snapshot=colleges --name=colleges`
 - Bring up the containers: `hyper compose up -f docker/compose.hyper.yml -p colleges$RANDOM -d`
-- `hyper fip attach <FIP> <CID>`
+- Attach your floating IP: `hyper fip attach <FIP> <CID>`
 
+### Updating code
+- Add a `docker/deployer/.env` file with your Hyper.sh credentials.
+- Run `npm run -s app:prod:deploy`.
 
 ## Technical Details
 
