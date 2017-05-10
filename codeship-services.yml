@@ -1,16 +1,27 @@
-web:
-  build:
-    image: karllhughes/colleges
-    dockerfile: Dockerfile
-  links:
-    - database
-  encrypted_env_file: .env.encrypted
-database:
-  image: postgres:9.5
-  environment:
-    - POSTGRES_USER=admin
-deployer:
-  image: chickenzord/hyper
-  volumes:
-    - docker:/docker
-  encrypted_env_file: docker/deployer/.env.encrypted
+services:
+  # Composer
+  composer:
+    image: composer/composer
+    volumes:
+      - ./:/app
+  # Web
+  web:
+    build:
+      image: karllhughes/colleges
+      dockerfile: Dockerfile
+    links:
+      - database
+    encrypted_env_file: .env.encrypted
+    volumes:
+      - ./vendor:/var/www/html/vendor
+  # Database
+  database:
+    image: postgres:9.5
+    environment:
+      - POSTGRES_USER=admin
+  # Docker deployer
+  deployer:
+    image: chickenzord/hyper
+    volumes:
+      - docker:/docker
+    encrypted_env_file: docker/deployer/.env.encrypted

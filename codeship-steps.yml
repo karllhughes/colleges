@@ -1,5 +1,7 @@
 - type: serial
   steps:
+  - service: composer
+    command: install
   - service: web
     type: push
     image_name: karllhughes/colleges
