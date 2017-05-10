@@ -1,0 +1,15 @@
+web:
+  build:
+    image: karllhughes/colleges
+    dockerfile: Dockerfile
+    links:
+      - database
+database:
+  image: postgres:9.5
+  environment:
+    - POSTGRES_USER=admin
+deployer:
+  image: chickenzord/hyper
+  volumes:
+    - docker:/docker
+  encrypted_env_file: docker/deployer/.env.encrypted

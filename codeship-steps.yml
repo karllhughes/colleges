@@ -1,0 +1,11 @@
+- type: serial
+  steps:
+  - service: web
+    type: push
+    image_name: karllhughes/colleges
+    registry: https://index.docker.io/v1/
+    encrypted_dockercfg_path: docker/dockercfg.encrypted
+    tag: master
+  - service: deployer
+    command: sh /docker/deployer/deploy.hyper.sh
+    tag: master
