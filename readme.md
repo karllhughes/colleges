@@ -50,9 +50,13 @@ Currently only GET requests are supported. POST, PUT, DELETE and others will be 
 
 ## Server Deployment
 
-```
-...
-```
+- Upload local data to volume: `hyper run -v $(pwd)/.data:/.data ubuntu`
+- Remove the original container: `hyper rm <CID>`
+- Create snapshot: `hyper snapshot create --volume <VID> --name colleges`
+- Create named volume from snapshot: `hyper volume create --snapshot=colleges --name=colleges`
+- Bring up the containers: `hyper compose up -f docker/compose.hyper.yml -p colleges$RANDOM -d`
+- `hyper fip attach <FIP> <CID>`
+
 
 ## Technical Details
 

@@ -3,19 +3,19 @@ services:
 
   # API Service
   api:
-    build: ../.
+    size: s3
+    image: karllhughes/colleges
     restart: always
     links:
       - database
     env_file:
       - ../.env
-    volumes:
-      - ../.:/var/www/html
     ports:
-      - 8100:80
+      - 80:80
 
   # Database
   database:
+    size: s3
     image: postgres:9.5
     restart: always
     ports:
@@ -23,4 +23,4 @@ services:
     environment:
       - POSTGRES_USER=admin
     volumes:
-      - ../.data:/var/lib/postgresql/data
+      - colleges:/var/lib/postgresql/data
