@@ -2,8 +2,9 @@ web:
   build:
     image: karllhughes/colleges
     dockerfile: Dockerfile
-    links:
-      - database
+  links:
+    - database
+  encrypted_env_file: .env.encrypted
 database:
   image: postgres:9.5
   environment:
@@ -12,5 +13,4 @@ deployer:
   image: chickenzord/hyper
   volumes:
     - docker:/docker
-    - .env:/.env
   encrypted_env_file: docker/deployer/.env.encrypted
